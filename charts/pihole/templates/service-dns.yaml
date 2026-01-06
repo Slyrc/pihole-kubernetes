@@ -29,14 +29,14 @@ spec:
   {{- end }}
   ports:
     - port: {{ .Values.serviceDns.port }}
-      targetPort: dns
+      targetPort: {{ .Values.dnsContainerPort }}
       {{- if .Values.serviceDns.nodePort }}
       nodePort: {{ .Values.serviceDns.nodePort }}
       {{- end }}
       protocol: TCP
       name: dns
     - port: {{ .Values.serviceDns.port }}
-      targetPort: dns-udp
+      targetPort: {{ .Values.dnsContainerPort }}
       {{- if and (.Values.serviceDns.nodePort) (eq .Values.serviceDns.type "NodePort") }}
       nodePort: {{ .Values.serviceDns.nodePort }}
       {{- end }}
