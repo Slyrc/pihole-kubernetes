@@ -458,6 +458,9 @@ webHttps: "443"
 # -- port the container should use to expose DHCP traffic
 dhcpContainerPort: "67"
 
+# -- port the container should use to expose DNS traffic
+dnsContainerPort: "53"
+
 # -- hostname of pod
 hostname: ""
 
